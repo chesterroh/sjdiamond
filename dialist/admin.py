@@ -6,6 +6,7 @@ class DiamondAdmin(admin.ModelAdmin):
         ('Input Date', { 'fields' : ['input_date'], 'classes' : ['collapse'] }),
         (None, { 'fields' : ['cert_no'] }),
         (None, { 'fields' : ['carat'] }),
+        (None, { 'fields' : ['color'] }),
         (None, { 'fields' : ['clarity'] }),
         (None, { 'fields' : ['cut'] }),
         (None, { 'fields' : ['pol'] }),
@@ -15,7 +16,7 @@ class DiamondAdmin(admin.ModelAdmin):
         (None, { 'fields' : ['discount_rate'] }),
         (None, { 'fields' : ['comment'] }),
         ]
-    list_display = ( 'cert_no', 'carat' , 'clarity', 'cut', 'pol', 'sym' , 'flo', 'rapa_price' , 'discount_rate' )
+    list_display = ( 'cert_no', 'carat' , 'color', 'clarity', 'cut', 'pol', 'sym' , 'flo', 'rapa_price' , 'discount_rate' )
     list_filter = ['carat']
     search_fields = [ 'carat' ]
                

@@ -1,0 +1,18 @@
+<h1> SJ Diamond search page </h1>
+
+{% if error_message  %}<p><strong>{{ error_message  }}</strong></p>{% endif  %}
+
+<form action="{% url 'dialist:results'  %}" method="post">
+	{% csrf_token  %}
+
+
+	<label for="from_carat">Carat from</label>
+	<input type="text" name="from_carat" />
+	<label for="to_carat">to</label>
+	<input type="text" name="to_carat" />
+
+	<input type="submit" value="Submit" />
+
+</form>
+
+	

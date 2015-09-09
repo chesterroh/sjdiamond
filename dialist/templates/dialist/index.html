@@ -1,0 +1,9 @@
+{% if diamond_list  %}
+<ul>
+	{% for diamond in diamond_list  %}
+	<li><a href="{% url 'dialist:detail' diamond.id  %}">{{ diamond.cert_no }}</a>,{{ diamond.carat  }},{{ diamond.color  }},{{ diamond.clarity  }},{{ diamond.rapa_price  }},{{ diamond.discount_rate  }}</li>
+	{% endfor  %}
+</ul>
+{% else  %}
+<p> No diamonds are available. </p>
+{% endif  %}

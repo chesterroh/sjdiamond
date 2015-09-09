@@ -17,6 +17,6 @@ from django.conf.urls import include, url
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^dialist/', include('dialist.urls')),
+    url(r'^dialist/', include('dialist.urls',namespace="dialist")),
     url(r'^admin/', include(admin.site.urls)),
 ]
