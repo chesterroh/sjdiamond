@@ -3,13 +3,49 @@ from django.db import models
 # Create your models here.
 
 class Diamond(models.Model):
+    COLOR_CHOICES = (
+        (20 , 'D'),
+        (19 , 'E'),
+        (18 , 'F'),
+        (17 , 'G'),
+        (16 , 'H'),
+        (15 , 'I'),
+        (14 , 'J'),
+        (13 , 'K'),
+        (12 , 'L'),
+        (11 , 'M'),
+        (10 , 'N'),
+        (9, 'O'),
+        (8 , 'P'),
+        (7 , 'Q'),
+        (6 , 'R'),
+        (5 , 'S'),
+        (4 , 'T'),
+        (3 , 'U'),
+        (2 , 'V'),
+        )
+    CLARITY_CHOICES = (
+        (20 , 'FL'),
+        (19 , 'IF'),
+        (18 , 'VVS1'),
+        (17 , 'VVS2'),
+        (16 , 'VS1'),
+        (15 , 'VS2'),
+        (14 , 'SI1'),
+        (13 , 'SI2'),
+        (12 , 'SI3'),
+        (11 , 'I1'),
+        (10 , 'I2'),
+        (9 , 'I3'),
+        )
+
     shape = models.IntegerField(default=0)
     stone_id = models.IntegerField(default=0)
     cert_type = models.CharField(max_length=10)
-    cert_no = models.CharField(max_length=20)
+    cert_no = models.BigIntegerField(default=0)
     carat = models.FloatField(default=0)
-    color = models.CharField(max_length=10)
-    clarity = models.CharField(max_length=10)
+    color = models.IntegerField(default=0, choices=COLOR_CHOICES)
+    clarity = models.IntegerField(default=0, choices=CLARITY_CHOICES)
     measurement = models.CharField(max_length=30)
     depth = models.FloatField(default=0)
     table = models.FloatField(default=0)
@@ -41,6 +77,8 @@ class Diamond(models.Model):
     girdle_percent = models.FloatField(default=0)
     girdle_condition = models.CharField(max_length=20)
     input_date = models.DateTimeField('date input')
+    update_date = models.DateTimeField('date updated')
+    delete_flag = models.BooleanField(default=False)
 
     def __str__(self):
         return self.cert_no + " " + str(self.carat) 
