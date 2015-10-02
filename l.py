@@ -127,7 +127,7 @@ with open(sys.argv[1]) as f:
             t_counter += 1
 
         t_counter = 0
-        for t in token:
+        for t inp token:
             if( len(t) == 0 ):
                 zerolen_list[t_counter] = 10
             t_counter += 1
