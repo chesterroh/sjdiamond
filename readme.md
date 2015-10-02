@@ -1,11 +1,17 @@
 
+## Future To-do list
+
+ * user auth / user registration / user deregistration feature
+ * e-mail integration
+ * bootstrap -- responsive web experience
+
 ## 2015.10.04
 
  * Create search view .. 
 
 ## 2015.10.03
 
- * Creating DB updater .... 
+ * Creating DB updater 
 
 ## 2015.10.02
 
