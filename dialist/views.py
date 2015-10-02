@@ -21,13 +21,16 @@ def index(request):
     return render(request,'dialist/index.html',{ 'diamond_list' : diamonds })
 
 
+
 def detail(request,diamond_id):
     diamond = get_object_or_404(Diamond,pk=diamond_id)
     return render(request,'dialist/detail.html',{ 'diamond' : diamond })
 
 
+
 def search(request):
     return render(request,'dialist/search.html')
+
 
 
 def results(request):
@@ -35,7 +38,6 @@ def results(request):
     to_carat = request.GET.get('to_carat')
     color = request.GET.get('color')
     clarity = request.GET.get('clarity')
-    
 
     diamonds = Diamond.objects.filter(carat__gte=float(from_carat)).filter(carat__lte=float(to_carat))
 
