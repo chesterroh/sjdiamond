@@ -4,6 +4,7 @@
  * user auth / user registration / user deregistration feature
  * e-mail integration
  * bootstrap -- responsive web experience
+ * integrating cert_no with GIA.ORG site
 
 ## 2015.10.04
 
