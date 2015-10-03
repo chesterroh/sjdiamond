@@ -4,25 +4,29 @@ from django.db import models
 
 class Diamond(models.Model):
     COLOR_CHOICES = (
-        (20 , 'D'),
-        (19 , 'E'),
-        (18 , 'F'),
-        (17 , 'G'),
-        (16 , 'H'),
-        (15 , 'I'),
-        (14 , 'J'),
-        (13 , 'K'),
-        (12 , 'L'),
-        (11 , 'M'),
-        (10 , 'N'),
-        (9, 'O'),
-        (8 , 'P'),
-        (7 , 'Q'),
-        (6 , 'R'),
-        (5 , 'S'),
-        (4 , 'T'),
-        (3 , 'U'),
-        (2 , 'V'),
+        (30 , 'D'),
+        (29 , 'E'),
+        (28 , 'F'),
+        (27 , 'G'),
+        (26 , 'H'),
+        (25 , 'I'),
+        (24 , 'J'),
+        (23 , 'K'),
+        (22 , 'L'),
+        (21 , 'M'),
+        (20 , 'N'),
+        (19, 'O'),
+        (18 , 'P'),
+        (17 , 'Q'),
+        (16 , 'R'),
+        (15 , 'S'),
+        (14 , 'T'),
+        (13 , 'U'),
+        (12 , 'V'),
+        (11 , 'W'),
+        (10 , 'X'),
+        (9 , 'Y'),
+        (8 , 'Z'),
         )
     CLARITY_CHOICES = (
         (20 , 'FL'),
@@ -42,7 +46,7 @@ class Diamond(models.Model):
     shape = models.IntegerField(default=0)
     stone_id = models.IntegerField(default=0)
     cert_type = models.CharField(max_length=10)
-    cert_no = models.BigIntegerField(default=0)
+    cert_no = models.BigIntegerField(default=0,primary_key=True)
     carat = models.FloatField(default=0)
     color = models.IntegerField(default=0, choices=COLOR_CHOICES)
     clarity = models.IntegerField(default=0, choices=CLARITY_CHOICES)
@@ -59,27 +63,11 @@ class Diamond(models.Model):
     rapa_price = models.IntegerField(default=0)
     discount_rate = models.FloatField(default=0)
     comment = models.CharField(max_length=100)
-    lust = models.CharField(max_length=10)
-    table_inc = models.CharField(max_length=10)
-    side_inc = models.CharField(max_length=10)
-    table_black = models.CharField(max_length=10)
-    side_black = models.CharField(max_length=10)
-    table_open = models.CharField(max_length=10)
-    side_open = models.CharField(max_length=10)
-    extra_facet = models.CharField(max_length=10)
-    key_to_symbol = models.CharField(max_length=200)
-    crown_angle = models.FloatField(default=0)
-    crown_height = models.FloatField(default=0)
-    pav_angle = models.FloatField(default=0)
-    pav_height  = models.FloatField(default=0)
-    star_length = models.FloatField(default=0)
-    lower_half = models.FloatField(default=0)
-    girdle_percent = models.FloatField(default=0)
-    girdle_condition = models.CharField(max_length=20)
-    input_date = models.DateTimeField('date input')
-    update_date = models.DateTimeField('date updated')
+    input_date = models.CharField(max_length=7)
+    update_date = models.CharField(max_length=7)
+    delete_date = models.CharField(max_length=7)
     delete_flag = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.cert_no + " " + str(self.carat) 
+        return str(self.cert_no) + " " + str(self.carat) + " " + str(self.rapa_price) + " " + str(self.discount_rate)
         

@@ -7,11 +7,14 @@
 
 ## 2015.10.04
 
- * Create search view .. 
+* Create search view, create deleted view
+   - If you look at the deleted view : you can catch the trend which is sold well, which one is not...
 
 ## 2015.10.03
 
- * Creating DB updater 
+ * DatetimeField should be changed to DateFiled... and DateField should be aligned with GIA_UPDATE_LIST ( do it with command line argument input ) (DONE)
+ * Creating DB updater (DONE)
+    - we should decide what kind of datetime index we use as our default input/update date. 
 
 ## 2015.10.02
 
