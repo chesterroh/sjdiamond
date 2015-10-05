@@ -97,7 +97,7 @@ with open(sys.argv[1]) as f:
             create_entry_num += 1
             print("Creating a new entry %s \n" % token[4])
             Diamond.objects.create( shape = 0,
-                                    stone_id = int(token[2]),
+                                    stone_id = token[2],
                                     cert_type = token[3],
                                     cert_no = get_cert_no(token[4]),
                                     carat = float(token[5]),

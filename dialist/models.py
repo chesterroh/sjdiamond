@@ -44,7 +44,7 @@ class Diamond(models.Model):
         )
 
     shape = models.IntegerField(default=0)
-    stone_id = models.IntegerField(default=0)
+    stone_id = models.CharField(max_length=20)
     cert_type = models.CharField(max_length=10)
     cert_no = models.BigIntegerField(default=0,primary_key=True)
     carat = models.FloatField(default=0)
