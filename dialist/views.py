@@ -31,19 +31,20 @@ def stockupdate(request,check_date):
     return render(request,'dialist/stockupdate.html', { 'c_dia' : c_dia , 'd_dia' : d_dia, 'check_date' : check_date })
 
 def search(request):
+    carat_from = request.GET.get('carat_from')
+    carat_to  = request.GET.get('carat_to')
+    color_from  = request.GET.get('color_from')
+    color_to  = request.GET.get('color_to')
+    clarity_from = request.GET.get('clarity_from')
+    clarity_to = request.GET.get('clarity_to')
+
+    '''
+    diamonds = Diamond.objects.filter(carat__gte=float(carat_from)).filter(carat__lte=float(carat_to))
+
+
+    diamonds = diamonds.order_by('-carat')
+
+    return render(request,'dialist/search.html', { 'diamonds' : diamonds })
+    '''
+
     return render(request,'dialist/search.html')
-
-
-def results(request):
-    from_carat = request.GET.get('from_carat')
-    to_carat = request.GET.get('to_carat')
-    color = request.GET.get('color')
-    clarity = request.GET.get('clarity')
-
-    diamonds = Diamond.objects.filter(carat__gte=float(from_carat)).filter(carat__lte=float(to_carat))
-
-    diamonds = diamonds.filter(color__startswith=color).filter(clarity__startswith=clarity)
-
-    diamonds = diamonds.order_by('carat')
-
-    return render(request,'dialist/results.html', { 'diamonds' : diamonds })

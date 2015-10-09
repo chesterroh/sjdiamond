@@ -1,7 +1,7 @@
 <a href="{% url 'dialist:index' %}"><< Back to the list page</a>
 
 <p>
-	GIA_NO : {{ dia.cert_no  }} <a href="http://git.org/{{ dia.cert_no }}" target="new">See the GIA certificate</a><br />
+	GIA_NO : {{ dia.cert_no  }} <a href="http://www.gia.edu/cs/Satellite?reportno={{ dia.cert_no  }}&childpagename=GIA%2FPage%2FReportCheck&pagename=GIA%2FDispatcher&c=Page&cid=1355954554547">See the GIA certificate</a><br />
 	CARAT : {{ dia.carat  }} <br />
 	COLOR : {{ dia.get_color_display  }}<br />
 	CLARITY : {{ dia.get_clarity_display  }} <br />

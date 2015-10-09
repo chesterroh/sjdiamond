@@ -4,19 +4,27 @@
  * user auth / user registration / user deregistration feature
  * e-mail integration
  * bootstrap -- responsive web experience
- * integrating cert_no with GIA.ORG site
 
-## 2015.10.09
+
+## 2015.10.10
 
 * Create user auth
 * find out some deployment site
 
+## 2015.10.09
+
+* Create search view with proper error handling
+* Adding wholesale_price column to the database
+* Adding SJ diamond corporate-related information table ( such as discount_rate etc, etc ) 
+
 ## 2015.10.08
 
-* Create search view 
+* Create search view (delayed)
 
 * Create index/detail/stockupdate view  (priority-1) (DONE)
    - If you look at the deleted view : you can catch the trend which is sold well, which one is not..
+
+* integrating cert_no with GIA.ORG site (DONE)
 
 ## 2015.10.05
 
