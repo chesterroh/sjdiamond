@@ -13,7 +13,9 @@
 
 ## 2015.10.08
 
-* Create search view, create stockupdate  (priority-1)
+* Create search view 
+
+* Create index/detail/stockupdate view  (priority-1) (DONE)
    - If you look at the deleted view : you can catch the trend which is sold well, which one is not..
 
 ## 2015.10.05
