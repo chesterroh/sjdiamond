@@ -1,9 +1,54 @@
 {% if diamond_list  %}
-<ul>
+
+<p>
+{% if diamond_list.has_previous  %}
+<a href="?page={{ diamond_list.previous_page_number  }}"><< Previous</a>
+{% endif  %}
+
+| {{ diamond_list.number  }} of {{ diamond_list.paginator.num_pages  }} |
+
+{% if diamond_list.has_next  %}
+<a href="?page={{ diamond_list.next_page_number  }}">Next >> </a>
+{% endif  %}
+</p>
+
+<table border="3">
+	<tr>
+		<th>Cert Number</th>
+		<th>Carat</th>
+		<th>Color</th>
+		<th>Clarity</th>
+		<th>Rapaport Price</th>
+		<th>Discount Rate</th>
+		<th>Final Price</th>
+	</tr>
+	
 	{% for diamond in diamond_list  %}
-	<li><a href="{% url 'dialist:detail' diamond.id  %}">{{ diamond.cert_no }}</a>,{{ diamond.carat  }},{{ diamond.color  }},{{ diamond.clarity  }},{{ diamond.rapa_price  }},{{ diamond.discount_rate  }}</li>
+	<tr>
+		<td><a href="{% url 'dialist:detail' diamond.cert_no  %}">{{ diamond.cert_no }}</a></td>
+		<td>{{ diamond.carat  }}</td>
+		<td>{{ diamond.get_color_display  }}</td>
+		<td>{{ diamond.get_clarity_display  }}</td>
+		<td>{{ diamond.rapa_price  }}</td>
+		<td>{{ diamond.discount_rate  }}</td>
+		<td>{{ diamond.calculate_price  }}</td>
+	</tr>
 	{% endfor  %}
-</ul>
+</table>
+
+<p>
+{% if diamond_list.has_previous  %}
+<a href="?page={{ diamond_list.previous_page_number  }}"><< Previous</a>
+{% endif  %}
+
+| {{ diamond_list.number  }} of {{ diamond_list.paginator.num_pages  }} |
+
+{% if diamond_list.has_next  %}
+<a href="?page={{ diamond_list.next_page_number  }}">Next >> </a>
+{% endif  %}
+</p>
+
+
 {% else  %}
 <p> No diamonds are available. </p>
 {% endif  %}

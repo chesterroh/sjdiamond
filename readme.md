@@ -6,10 +6,19 @@
  * bootstrap -- responsive web experience
  * integrating cert_no with GIA.ORG site
 
-## 2015.10.04
+## 2015.10.09
 
-* Create search view, create deleted view
-   - If you look at the deleted view : you can catch the trend which is sold well, which one is not...
+* Create user auth
+* find out some deployment site
+
+## 2015.10.08
+
+* Create search view, create stockupdate  (priority-1)
+   - If you look at the deleted view : you can catch the trend which is sold well, which one is not..
+
+## 2015.10.05
+
+* Model date ;;;; let's finish reading model document (DONE)
 
 ## 2015.10.03
 

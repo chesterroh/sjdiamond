@@ -46,7 +46,7 @@ class Diamond(models.Model):
     shape = models.IntegerField(default=0)
     stone_id = models.CharField(max_length=20)
     cert_type = models.CharField(max_length=10)
-    cert_no = models.BigIntegerField(default=0,primary_key=True)
+    cert_no = models.BigIntegerField(default=0,primary_key=True,unique=True)
     carat = models.FloatField(default=0)
     color = models.IntegerField(default=0, choices=COLOR_CHOICES)
     clarity = models.IntegerField(default=0, choices=CLARITY_CHOICES)
@@ -70,4 +70,7 @@ class Diamond(models.Model):
 
     def __str__(self):
         return str(self.cert_no) + " " + str(self.carat) + " " + str(self.rapa_price) + " " + str(self.discount_rate)
-        
+
+    def calculate_price(self):
+        return int(self.carat * self.rapa_price * ( 100 - self.discount_rate) / 100)
+    

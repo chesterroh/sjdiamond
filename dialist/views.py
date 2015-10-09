@@ -8,7 +8,7 @@ from .models import Diamond
 # Create your views here.
 
 def index(request):
-    paginator = Paginator(Diamond.objects.all(),500)
+    paginator = Paginator(Diamond.objects.filter(delete_flag=False).order_by('-carat'),100)
     page = request.GET.get('page')
 
     try:
@@ -21,12 +21,9 @@ def index(request):
     return render(request,'dialist/index.html',{ 'diamond_list' : diamonds })
 
 
-
-def detail(request,diamond_id):
-    diamond = get_object_or_404(Diamond,pk=diamond_id)
-    return render(request,'dialist/detail.html',{ 'diamond' : diamond })
-
-
+def detail(request,cert_no):
+    diamond = get_object_or_404(Diamond,pk=cert_no)
+    return render(request,'dialist/detail.html',{ 'dia' : diamond })
 
 def search(request):
     return render(request,'dialist/search.html')

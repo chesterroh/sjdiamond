@@ -91,6 +91,11 @@ with open(sys.argv[1]) as f:
             dia.discount_rate = float(token[19])
 
             dia.update_date = sys.argv[2]
+
+            if dia.delete_flag == True:   # this is re-entered stock
+                dia.delete_date = ''
+                dia.delete_flag = False
+                
             dia.save()
 
         except Diamond.DoesNotExist:

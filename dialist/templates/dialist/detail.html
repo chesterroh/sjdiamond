@@ -1,2 +1,25 @@
-{{ diamond.cert_no  }}<br />
-{{ diamond.carat  }}
+<a href="{% url 'dialist:index' %}"><< Back to the list page</a>
+
+<p>
+	GIA_NO : {{ dia.cert_no  }} <a href="http://git.org/{{ dia.cert_no }}" target="new">See the GIA certificate</a><br />
+	CARAT : {{ dia.carat  }} <br />
+	COLOR : {{ dia.get_color_display  }}<br />
+	CLARITY : {{ dia.get_clarity_display  }} <br />
+	MEASUREMENT : {{ dia.measurement  }} <br />
+	DEPTH : {{ dia.depth  }}<br />
+	TABLE : {{ dia.table  }}<br />
+	GIRDLE : {{ dia.girdle  }}<br />
+	CULET : {{ dia.culet  }}<br />
+	CUT : {{ dia.cut  }}<br />
+	POL : {{ dia.pol  }} <br />
+	SYM : {{ dia.sym  }}<br />
+	FLO : {{ dia.flo  }}<br />
+	HNA : {{ dia.hna  }}<br />
+	RAPAPORT PRICE : {{ dia.rapa_price  }}<br />
+	DISCOUNT RATE : {{ dia.discount_rate  }}<br />
+	COMMENT : {{ dia.comment  }} <br />
+	<b>FINAL PRICE : {{ dia.calculate_price  }}</b><br />
+	FIRST INPUT DATE : {{ dia.input_date  }}<br />
+	LAST UPDATE DATE : {{ dia.update_date  }}<br />
+
+</p>
