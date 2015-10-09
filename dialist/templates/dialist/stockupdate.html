@@ -1,0 +1,61 @@
+{% if d_dia  %}
+
+There're {{ d_dia.count  }} deleted(sold) diamond at {{ check_date  }} <br />
+<table border="3">
+	<tr>
+		<th>Cert Number</th>
+		<th>Carat</th>
+		<th>Color</th>
+		<th>Clarity</th>
+		<th>Rapaport Price</th>
+		<th>Discount Rate</th>
+		<th>Final Price</th>
+	</tr>
+	
+	{% for diamond in d_dia  %}
+	<tr>
+		<td><a href="{% url 'dialist:detail' diamond.cert_no  %}">{{ diamond.cert_no }}</a></td>
+		<td>{{ diamond.carat  }}</td>
+		<td>{{ diamond.get_color_display  }}</td>
+		<td>{{ diamond.get_clarity_display  }}</td>
+		<td>{{ diamond.rapa_price  }}</td>
+		<td>{{ diamond.discount_rate  }}</td>
+		<td>{{ diamond.calculate_price  }}</td>
+	</tr>
+	{% endfor  %}
+</table>
+
+{% else  %}
+<p> No deleted(sold) diamons at {{ check_date  }}. </p>
+{% endif  %}
+
+{% if c_dia  %}
+
+There're {{ c_dia.count  }} input diamond at {{ check_date  }} <br />
+<table border="3">
+	<tr>
+		<th>Cert Number</th>
+		<th>Carat</th>
+		<th>Color</th>
+		<th>Clarity</th>
+		<th>Rapaport Price</th>
+		<th>Discount Rate</th>
+		<th>Final Price</th>
+	</tr>
+	
+	{% for diamond in c_dia  %}
+	<tr>
+		<td><a href="{% url 'dialist:detail' diamond.cert_no  %}">{{ diamond.cert_no }}</a></td>
+		<td>{{ diamond.carat  }}</td>
+		<td>{{ diamond.get_color_display  }}</td>
+		<td>{{ diamond.get_clarity_display  }}</td>
+		<td>{{ diamond.rapa_price  }}</td>
+		<td>{{ diamond.discount_rate  }}</td>
+		<td>{{ diamond.calculate_price  }}</td>
+	</tr>
+	{% endfor  %}
+</table>
+
+{% else  %}
+<p> No input diamons at {{ check_date  }}. </p>
+{% endif  %}

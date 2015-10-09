@@ -25,9 +25,13 @@ def detail(request,cert_no):
     diamond = get_object_or_404(Diamond,pk=cert_no)
     return render(request,'dialist/detail.html',{ 'dia' : diamond })
 
+def stockupdate(request,check_date):
+    c_dia = Diamond.objects.filter(input_date=check_date).order_by('-carat')
+    d_dia = Diamond.objects.filter(delete_date=check_date).order_by('-carat')
+    return render(request,'dialist/stockupdate.html', { 'c_dia' : c_dia , 'd_dia' : d_dia, 'check_date' : check_date })
+
 def search(request):
     return render(request,'dialist/search.html')
-
 
 
 def results(request):
