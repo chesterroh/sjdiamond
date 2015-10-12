@@ -1,19 +1,24 @@
 
 ## Future To-do list
 
- * user auth / user registration / user deregistration feature
  * e-mail integration
  * bootstrap -- responsive web experience
+ * (to-do) maintaining the search condition (carat,color,clarity)
 
 ## 2015.10.14
 
-* find out some deployment site  --- select domain name --- 
 * Adding SJ diamond corporate-related information table ( such as discount_rate etc, etc )
+
+## 2015.10.13
+
+* in order to fully implement USER auth, I should understand Forms,Views class template structure for that. then implement user auth form.. it would be a breeze!!
+
+* find out some deployment site  --- select domain name --- 
 
 ## 2015.10.12
 
-* Adding consumer_price column to the database (DONE)
-* Create user auth
+* Adding consumer_price column to the database (DONE) + order_by price (DONE)
+* Create user auth --- study completed anyway...
 * check out l.py properly works 
 
 ## 2015.10.09

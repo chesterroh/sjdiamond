@@ -77,6 +77,7 @@ def search(request):
 
     cut_ex_flag = False
     flo_non_flag = False
+    price_order_flag = False
 
     error_messages = []
     
@@ -91,6 +92,7 @@ def search(request):
 
     cut_flag = request.GET.get('cut_flag')
     flo_flag = request.GET.get('flo_flag')
+    price_flag = request.GET.get('price_flag')
 
     if carat_from == None:
         return render(request,'dialist/search.html')
@@ -115,6 +117,10 @@ def search(request):
     if flo_flag == "None":
         flo_non_flag = True
 
+    if price_flag == "True":
+        price_order_flag = True
+            
+
     if num_carat_from > num_carat_to:
         error_messages.append("CARAT FROM-TO RANGE ERROR")
 
@@ -137,6 +143,10 @@ def search(request):
 
         if cut_ex_flag == True:
             diamonds = diamonds.filter(cut='EX')
+
+        if price_order_flag == True:
+            diamonds = diamonds.order_by('-consumer_price')
+                
 
         return render(request,'dialist/search.html',{ 'diamonds' : diamonds })
 
