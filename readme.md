@@ -12,14 +12,17 @@
 ## 2015.10.13
 
 * in order to fully implement USER auth, I should understand Forms,Views class template structure for that. then implement user auth form.. it would be a breeze!!
+   -- change the view function ---> view class
+   -- use custom form ---> form class
+   -- then, let's create login
 
 * find out some deployment site  --- select domain name --- 
 
 ## 2015.10.12
 
 * Adding consumer_price column to the database (DONE) + order_by price (DONE)
-* Create user auth --- study completed anyway...
-* check out l.py properly works 
+* Create user auth --- study completed anyway... (DONE)
+* check out l.py properly works  (DONE)
 
 ## 2015.10.09
 

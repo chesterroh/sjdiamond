@@ -89,7 +89,7 @@ with open(sys.argv[1]) as f:
             
             dia.rapa_price = int(token[18])
             dia.discount_rate = float(token[19])
-            dia.consumer_price = dia.rapa_price * dia.carat * ( 100 - dia.discount_rate 0 / 100 
+            dia.consumer_price = dia.rapa_price * dia.carat * ( 100 - dia.discount_rate ) / 100 
 
             dia.update_date = sys.argv[2]
 
