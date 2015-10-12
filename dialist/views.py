@@ -64,12 +64,19 @@ def detail(request,cert_no):
     diamond = get_object_or_404(Diamond,pk=cert_no)
     return render(request,'dialist/detail.html',{ 'dia' : diamond })
 
+
+
 def stockupdate(request,check_date):
     c_dia = Diamond.objects.filter(input_date=check_date).order_by('-carat')
     d_dia = Diamond.objects.filter(delete_date=check_date).order_by('-carat')
     return render(request,'dialist/stockupdate.html', { 'c_dia' : c_dia , 'd_dia' : d_dia, 'check_date' : check_date })
 
+
+
 def search(request):
+
+    cut_ex_flag = False
+    flo_non_flag = False
 
     error_messages = []
     
@@ -85,23 +92,51 @@ def search(request):
     cut_flag = request.GET.get('cut_flag')
     flo_flag = request.GET.get('flo_flag')
 
+    if carat_from == None:
+        return render(request,'dialist/search.html')
 
+    '''
+    Convert the values to integer 
+    We'll apply try-catch to the following block
+    '''
 
+    num_carat_from = float(carat_from)
+    num_carat_to = float(carat_to)
+
+    num_color_from = COLOR_CHOICES[color_from]
+    num_color_to = COLOR_CHOICES[color_to]
+
+    num_clarity_from = CLARITY_CHOICES[clarity_from]
+    num_clarity_to = CLARITY_CHOICES[clarity_to]
+
+    if cut_flag == "True":
+        cut_ex_flag = True
+
+    if flo_flag == "None":
+        flo_non_flag = True
+
+    if num_carat_from > num_carat_to:
+        error_messages.append("CARAT FROM-TO RANGE ERROR")
+
+    if num_color_from < num_color_to:
+        error_messages.append("COLOR FROM-TO RANGE ERROR")
+
+    if num_clarity_from < num_clarity_to:
+        error_messages.append("CLARITY FROM-TO RANGE ERROR")
+        
+    
     if error_messages:
         return render(request,'dialist/search.html', { 'error_messages' : error_messages })
 
     else:
-        '''
-        Try to query the DB
-        '''
 
-        return render(request,'dialist/search.html')
+        diamonds = Diamond.objects.filter(carat__lte=num_carat_to).filter(carat__gte=num_carat_from).filter(color__lte=num_color_from).filter(color__gte=num_color_to).filter(clarity__lte=num_clarity_from).filter(clarity__gte=num_clarity_to)
 
-    '''
-    diamonds = Diamond.objects.filter(carat__gte=float(carat_from)).filter(carat__lte=float(carat_to))
+        if flo_non_flag == True:
+            diamonds = diamonds.filter(flo='NON')
 
+        if cut_ex_flag == True:
+            diamonds = diamonds.filter(cut='EX')
 
-    diamonds = diamonds.order_by('-carat')
+        return render(request,'dialist/search.html',{ 'diamonds' : diamonds })
 
-    return render(request,'dialist/search.html', { 'diamonds' : diamonds })
-    '''

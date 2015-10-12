@@ -1,6 +1,14 @@
 <h1> SJ Diamond search page </h1>
 
-{% if error_message  %}<p><strong>{{ error_message  }}</strong></p>{% endif %}
+{% if error_messages  %}
+Your input was not valid. Please try again with invalid values.
+<ul>
+{% for error_message in error_messages  %}
+<li><strong>{{ error_message  }}</strong></li>
+{% endfor  %}
+</ul>
+
+{% endif %}
 
 <form action="{% url 'dialist:search'  %}" method="get">
 	{% csrf_token  %}
@@ -114,6 +122,40 @@
 
 </form>
 
-{% for diamond in diamonds  %}
-{{ diamond.cert_no  }}, {{ diamond.carat  }} , {{ diamond.color  }}, {{ diamond.clarity }}<br />
-{% endfor  %}
+{% if diamonds  %}
+
+Total {{ diamonds.count  }} number(s) of matched diamonds found.
+
+<table border="3">
+	<tr>
+		<th>Cert Number</th>
+		<th>Carat</th>
+		<th>Color</th>
+		<th>Clarity</th>
+		<th>Cut</th>
+		<th>Polish</th>
+		<th>Symmetry</th>
+		<th>Fluorescent</th>
+		<th>Rapaport Price</th>
+		<th>Discount Rate</th>
+		<th>Final Price</th>
+	</tr>
+	
+	{% for diamond in diamonds  %}
+	<tr>
+		<td><a href="{% url 'dialist:detail' diamond.cert_no  %}">{{ diamond.cert_no }}</a></td>
+		<td>{{ diamond.carat  }}</td>
+		<td>{{ diamond.get_color_display  }}</td>
+		<td>{{ diamond.get_clarity_display  }}</td>
+		<td>{{ diamond.cut  }}</td>
+		<td>{{ diamond.pol  }}</td>
+		<td>{{ diamond.sym   }}</td>
+		<td>{{ diamond.flo   }}</td>
+		<td>{{ diamond.rapa_price  }}</td>
+		<td>{{ diamond.discount_rate  }}</td>
+		<td>{{ diamond.calculate_price  }}</td>
+	</tr>
+	{% endfor  %}
+</table>
+
+{% endif  %}

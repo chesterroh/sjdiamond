@@ -6,17 +6,21 @@
  * bootstrap -- responsive web experience
 
 
-## 2015.10.10
+## 2015.10.14
 
 * Create user auth
 * find out some deployment site
 
+
+## 2015.10.12
+
+* Adding wholesale_price column to the database 
+* Adding SJ diamond corporate-related information table ( such as discount_rate etc, etc )
+
 ## 2015.10.09
 
-* Create search view with proper error handling
-* Adding wholesale_price column to the database
-* Adding SJ diamond corporate-related information table ( such as discount_rate etc, etc ) 
-
+* Create search view with proper error handling (DONE)
+ 
 ## 2015.10.08
 
 * Create search view (delayed)
