@@ -138,7 +138,7 @@ Total {{ diamonds.count  }} number(s) of matched diamonds found.
 		<th>Fluorescent</th>
 		<th>Rapaport Price</th>
 		<th>Discount Rate</th>
-		<th>Final Price</th>
+		<th>Consumer Price</th>
 	</tr>
 	
 	{% for diamond in diamonds  %}
@@ -153,7 +153,7 @@ Total {{ diamonds.count  }} number(s) of matched diamonds found.
 		<td>{{ diamond.flo   }}</td>
 		<td>{{ diamond.rapa_price  }}</td>
 		<td>{{ diamond.discount_rate  }}</td>
-		<td>{{ diamond.calculate_price  }}</td>
+		<td>{{ diamond.consumer_price  }}</td>
 	</tr>
 	{% endfor  %}
 </table>

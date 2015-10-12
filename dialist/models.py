@@ -62,6 +62,7 @@ class Diamond(models.Model):
     hna = models.CharField(max_length=10)
     rapa_price = models.IntegerField(default=0)
     discount_rate = models.FloatField(default=0)
+    consumer_price = models.IntegerField(default=0)
     comment = models.CharField(max_length=100)
     input_date = models.CharField(max_length=7)
     update_date = models.CharField(max_length=7)
@@ -70,7 +71,3 @@ class Diamond(models.Model):
 
     def __str__(self):
         return str(self.cert_no) + " " + str(self.carat) + " " + str(self.rapa_price) + " " + str(self.discount_rate)
-
-    def calculate_price(self):
-        return int(self.carat * self.rapa_price * ( 100 - self.discount_rate) / 100)
-    

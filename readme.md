@@ -5,17 +5,16 @@
  * e-mail integration
  * bootstrap -- responsive web experience
 
-
 ## 2015.10.14
 
-* Create user auth
-* find out some deployment site
-
+* find out some deployment site  --- select domain name --- 
+* Adding SJ diamond corporate-related information table ( such as discount_rate etc, etc )
 
 ## 2015.10.12
 
-* Adding wholesale_price column to the database 
-* Adding SJ diamond corporate-related information table ( such as discount_rate etc, etc )
+* Adding consumer_price column to the database (DONE)
+* Create user auth
+* check out l.py properly works 
 
 ## 2015.10.09
 
