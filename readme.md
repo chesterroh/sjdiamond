@@ -5,18 +5,20 @@
  * bootstrap -- responsive web experience
  * (to-do) maintaining the search condition (carat,color,clarity)
 
-## 2015.10.14
+## 2015.10.16
+
+* adding login auth
 
 * Adding SJ diamond corporate-related information table ( such as discount_rate etc, etc )
-
-## 2015.10.13
 
 * in order to fully implement USER auth, I should understand Forms,Views class template structure for that. then implement user auth form.. it would be a breeze!!
    -- change the view function ---> view class
    -- use custom form ---> form class
    -- then, let's create login
 
-* find out some deployment site  --- select domain name --- 
+* find out some deployment site  --- select domain name --
+
+  ---- chungdam.moreover.co.kr .. deployment
 
 ## 2015.10.12
 
