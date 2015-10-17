@@ -20,7 +20,7 @@ There're {{ d_dia.count  }} deleted(sold) diamond at {{ check_date  }} <br />
 		<td>{{ diamond.get_clarity_display  }}</td>
 		<td>{{ diamond.rapa_price  }}</td>
 		<td>{{ diamond.discount_rate  }}</td>
-		<td>{{ diamond.calculate_price  }}</td>
+		<td>{{ diamond.consumer_price  }}</td>
 	</tr>
 	{% endfor  %}
 </table>
@@ -51,7 +51,7 @@ There're {{ c_dia.count  }} input diamond at {{ check_date  }} <br />
 		<td>{{ diamond.get_clarity_display  }}</td>
 		<td>{{ diamond.rapa_price  }}</td>
 		<td>{{ diamond.discount_rate  }}</td>
-		<td>{{ diamond.calculate_price  }}</td>
+		<td>{{ diamond.consumer_price  }}</td>
 	</tr>
 	{% endfor  %}
 </table>
