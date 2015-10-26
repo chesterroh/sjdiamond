@@ -5,7 +5,7 @@
  * bootstrap -- responsive web experience
  * (to-do) maintaining the search condition (carat,color,clarity)
 
-## 2015.10.16
+## 2015.10.27
 
 * adding login auth
 
@@ -16,8 +16,9 @@
    -- use custom form ---> form class
    -- then, let's create login
 
-* find out some deployment site  --- select domain name --
+## 2016.10.26 
 
+* find out some deployment site  --- select domain name --
   ---- chungdam.moreover.co.kr .. deployment
 
 ## 2015.10.12
