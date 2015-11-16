@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 COLOR_CHOICES = { 'D' : 30,
                   'E' : 29,
@@ -144,3 +144,5 @@ print("==================================================================")
 print("update: %d, create: %d, delete: %d\n" % (update_entry_num,create_entry_num,deleted_entry_num))
 
 # the following line should be check the delete processing...
+
+# hello world

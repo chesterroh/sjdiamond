@@ -148,5 +148,5 @@ def search(request):
             diamonds = diamonds.order_by('-consumer_price')
                 
 
-        return render(request,'dialist/search.html',{ 'diamonds' : diamonds })
+v        return render(request,'dialist/search.html',{ 'diamonds' : diamonds })
 
