@@ -146,7 +146,6 @@ def search(request):
 
         if price_order_flag == True:
             diamonds = diamonds.order_by('-consumer_price')
-                
 
         return render(request,'dialist/search.html',{ 'diamonds' : diamonds })
 

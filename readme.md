@@ -5,7 +5,7 @@
  * bootstrap -- responsive web experience
  * (to-do) maintaining the search condition (carat,color,clarity)
 
-## 2015.10.27
+## 2015.11.*
 
 * adding login auth
 
@@ -15,6 +15,14 @@
    -- change the view function ---> view class
    -- use custom form ---> form class
    -- then, let's create login
+
+## 2016.11.17
+
+* postgres sql was installed, and database has been changed
+* 151104 Database update finished.
+
+
+========== There was long break between this line ============
 
 ## 2016.10.26 
 
