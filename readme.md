@@ -15,6 +15,22 @@
    -- use custom form ---> form class
    -- then, let's create login
 
+## 2016.01
+
+* 151208 Database update added
+* simple manual
+
+dialist
+http://sj.chesterventures.com/dialist
+
+search
+http://sj.chesterventures.com/dialist/search
+
+stockupdate
+http://sj.chesterventures.com/dialist/stockupdate/151016
+
+
+
 ## 2016.11.17
 
 * postgres sql was installed, and database has been changed
