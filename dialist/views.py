@@ -27,7 +27,7 @@ COLOR_CHOICES = { 'D' : 30,
                   'W' : 11,
                   'X' : 10,
                   'Y' :  9,
-                  'Z' :  8,
+                  'Z' :  8
                   }
 
 CLARITY_CHOICES = { 'FL' : 20,
